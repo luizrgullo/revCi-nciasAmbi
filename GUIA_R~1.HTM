@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia Rápido — Prova Ciências Ambientais (ENG4025)</title>
+<style>
+:root{
+  color-scheme:light;
+  --res:#16a34a; --res-d:#14532d; --res-l:#dcfce7;
+  --ar:#0ea5e9; --ar-d:#075985; --ar-l:#e0f2fe;
+  --clima:#f97316; --clima-d:#9a3412; --clima-l:#ffedd5;
+  --calc:#7c3aed; --calc-d:#4c1d95; --calc-l:#ede9fe;
+  --ink:#1e293b; --muted:#64748b; --bg:#f8fafc; --card:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;padding-bottom:80px}
+header{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:34px 20px 30px;text-align:center}
+header h1{font-size:1.7rem;margin-bottom:6px}
+header p{color:#cbd5e1;font-size:.95rem}
+.exam-bar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.exam-bar span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:6px 13px;border-radius:20px;font-size:.8rem}
+nav{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.08);display:flex;gap:6px;padding:10px;overflow-x:auto;justify-content:center}
+nav a{flex:0 0 auto;text-decoration:none;font-weight:600;font-size:.85rem;padding:8px 14px;border-radius:10px;color:var(--ink);transition:.2s;white-space:nowrap}
+nav a.n-res{background:var(--res-l);color:var(--res-d)} nav a.n-ar{background:var(--ar-l);color:var(--ar-d)}
+nav a.n-clima{background:var(--clima-l);color:var(--clima-d)} nav a.n-calc{background:var(--calc-l);color:var(--calc-d)}
+nav a:hover{transform:translateY(-2px)}
+main{max-width:920px;margin:0 auto;padding:24px 18px}
+section{margin-bottom:42px;scroll-margin-top:70px}
+.mod-head{display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:16px;color:#fff;margin-bottom:18px}
+.mod-head .ic{font-size:2rem}
+.mod-head h2{font-size:1.35rem} .mod-head p{font-size:.85rem;opacity:.92}
+.h-res{background:linear-gradient(135deg,var(--res),var(--res-d))}
+.h-ar{background:linear-gradient(135deg,var(--ar),var(--ar-d))}
+.h-clima{background:linear-gradient(135deg,var(--clima),var(--clima-d))}
+.h-calc{background:linear-gradient(135deg,var(--calc),var(--calc-d))}
+.card{background:var(--card);border-radius:14px;padding:18px 20px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.06);border:1px solid #eef2f7}
+.card h3{font-size:1.05rem;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.card h3 .tag{font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px;color:#fff}
+.intu{border-left:4px solid #fbbf24;background:#fffbeb;padding:11px 14px;border-radius:0 10px 10px 0;margin:12px 0;font-size:.92rem}
+.intu b{color:#b45309}
+.intu::before{content:"💡 Intuição: ";font-weight:700;color:#b45309}
+.warn{border-left:4px solid #ef4444;background:#fef2f2;padding:11px 14px;border-radius:0 10px 10px 0;margin:12px 0;font-size:.9rem}
+.warn::before{content:"⚠️ Pega da prova: ";font-weight:700;color:#b91c1c}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.85rem}
+th,td{padding:7px 9px;text-align:left;border-bottom:1px solid #e2e8f0}
+th{background:#f1f5f9;font-weight:700}
+tr:hover td{background:#f8fafc}
+.pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.78rem;font-weight:600;margin:2px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.exam-bar{font-size:.7rem}}
+.vs{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:12px 0}
+.vs .box{padding:12px;border-radius:12px;font-size:.85rem}
+.vs .bad{background:#fef2f2;border:1px solid #fecaca}
+.vs .good{background:#f0fdf4;border:1px solid #bbf7d0}
+.vs .mid{font-weight:800;color:var(--muted)}
+.formula{background:#0f172a;color:#e2e8f0;padding:16px 18px;border-radius:12px;font-family:'Cambria Math','Georgia',serif;font-size:1.05rem;text-align:center;margin:12px 0;overflow-x:auto}
+.formula .frac{display:inline-block;vertical-align:middle;text-align:center}
+.formula .frac .num{display:block;border-bottom:1.5px solid #e2e8f0;padding:0 6px}
+.formula .frac .den{display:block;padding:0 6px}
+.sub{font-size:.7em;vertical-align:sub}.sup{font-size:.7em;vertical-align:super}
+.step{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.step .num{flex:0 0 30px;height:30px;border-radius:50%;background:var(--calc);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem}
+.step .body{flex:1;font-size:.9rem}
+.ex{background:var(--calc-l);border:1px solid #ddd6fe;border-radius:12px;padding:16px;margin:14px 0}
+.ex h4{color:var(--calc-d);margin-bottom:8px;font-size:1rem}
+.ex .given{background:#fff;border-radius:8px;padding:8px 12px;font-size:.85rem;margin:8px 0;font-family:monospace}
+.ans{background:#dcfce7;border:1px dashed #16a34a;border-radius:8px;padding:8px 12px;font-weight:700;color:var(--res-d);margin-top:8px}
+.flash{cursor:pointer;perspective:1000px;height:120px}
+.flash .inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flash.flip .inner{transform:rotateY(180deg)}
+.flash .f,.flash .b{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px;font-size:.9rem}
+.flash .f{background:var(--ar-d);color:#fff;font-weight:600}
+.flash .b{background:#fff;border:2px solid var(--ar);color:var(--ink);transform:rotateY(180deg);font-size:.82rem}
+.cola{background:#1e293b;color:#e2e8f0;border-radius:14px;padding:18px 22px;margin-top:14px}
+.cola h3{color:#fbbf24} .cola ul{margin:8px 0 0 18px;font-size:.88rem} .cola li{margin-bottom:5px}
+.checklist label{display:flex;gap:10px;align-items:center;padding:8px;border-radius:8px;font-size:.9rem;cursor:pointer}
+.checklist label:hover{background:#f1f5f9}
+.checklist input{width:18px;height:18px;accent-color:var(--res)}
+svg{max-width:100%;height:auto;display:block;margin:10px auto}
+.pyramid-row{display:flex;align-items:center;gap:10px;margin:4px 0}
+.pyramid-row .bar{height:34px;border-radius:6px;display:flex;align-items:center;padding-left:12px;color:#fff;font-weight:700;font-size:.85rem}
+footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
+details{margin:8px 0;border:1px solid #e2e8f0;border-radius:10px;padding:4px 12px}
+summary{cursor:pointer;font-weight:600;padding:8px 0;font-size:.9rem}
+kbd{background:#e2e8f0;border-radius:4px;padding:1px 6px;font-size:.8rem;font-family:monospace}
+</style>
+</head>
+<body>
+<header>
+  <h1>🎯 Guia Rápido da Prova — Ciências Ambientais</h1>
+  <p>ENG4025 · PUC-Rio · As 3 matérias destiladas para você decorar rápido e entender de verdade</p>
+  <div class="exam-bar">
+    <span>📦 Resíduos</span><span>🌫️ Poluição Atmosférica</span><span>🌡️ Mudanças Climáticas</span><span>🧮 Cálculos = 2 de 6 pts</span>
+  </div>
+</header>
+
+<nav>
+  <a class="n-res" href="#residuos">📦 Resíduos</a>
+  <a class="n-ar" href="#ar">🌫️ Poluição</a>
+  <a class="n-clima" href="#clima">🌡️ Clima</a>
+  <a class="n-calc" href="#calculos">🧮 CÁLCULOS</a>
+  <a class="n-ar" href="#revisao">✅ Checklist</a>
+</nav>
+
+<main>
+
+<!-- ================= INTRO MAPA ================= -->
+<div class="card" style="text-align:center;background:linear-gradient(135deg,#fff,#f8fafc)">
+  <h3 style="justify-content:center">🗺️ O mapa mental da prova em 1 olhada</h3>
+  <p style="font-size:.9rem;color:var(--muted);margin-bottom:6px">As três matérias contam a mesma história: <b>o que o humano produz e descarta no planeta</b>.</p>
+  <svg viewBox="0 0 700 130" xmlns="http://www.w3.org/2000/svg">
+    <rect x="20" y="35" width="180" height="60" rx="12" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="110" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#14532d">📦 RESÍDUOS</text>
+    <text x="110" y="78" text-anchor="middle" font-size="10" fill="#14532d">o que vira lixo no chão</text>
+    <rect x="260" y="35" width="180" height="60" rx="12" fill="#e0f2fe" stroke="#0ea5e9"/>
+    <text x="350" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#075985">🌫️ POLUIÇÃO DO AR</text>
+    <text x="350" y="78" text-anchor="middle" font-size="10" fill="#075985">o que vira lixo no ar</text>
+    <rect x="500" y="35" width="180" height="60" rx="12" fill="#ffedd5" stroke="#f97316"/>
+    <text x="590" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#9a3412">🌡️ CLIMA</text>
+    <text x="590" y="78" text-anchor="middle" font-size="10" fill="#9a3412">o ar poluído aquecendo tudo</text>
+    <path d="M200 65 L260 65" stroke="#94a3b8" stroke-width="2" marker-end="url(#a)"/>
+    <path d="M440 65 L500 65" stroke="#94a3b8" stroke-width="2" marker-end="url(#a)"/>
+    <defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#94a3b8"/></marker></defs>
+  </svg>
+</div>
+
+<!-- ================= MÓDULO 1: RESÍDUOS ================= -->
+<section id="residuos">
+  <div class="mod-head h-res">
+    <span class="ic">📦</span>
+    <div><h2>Módulo 1 — Resíduos & Economia Circular</h2>
+    <p>PNRS · hierarquia · quando recuperar · logística reversa · aterros</p></div>
+  </div>
+
+  <div class="card">
+    <h3>🔑 Resíduo ≠ Rejeito (a definição que cai)</h3>
+    <div class="vs">
+      <div class="box good"><b>RESÍDUO</b><br>Ainda dá pra fazer algo: reusar, reciclar, tratar, gerar energia. <b>Tem valor.</b></div>
+      <div class="mid">≠</div>
+      <div class="box bad"><b>REJEITO</b><br>Esgotou TODAS as tecnologias viáveis. Só resta o aterro. <b>Fim da linha.</b></div>
+    </div>
+    <div class="intu">Resíduo é o jogador que ainda pode entrar em campo; rejeito é quem já foi expulso e vai pro banco (aterro) de vez. Base legal: <b>PNRS — Lei 12.305/2010</b>.</div>
+  </div>
+
+  <div class="card">
+    <h3>🪜 A Hierarquia da PNRS <span class="tag" style="background:var(--res)">decore a ordem!</span></h3>
+    <p style="font-size:.85rem;color:var(--muted)">Princípios: <b>prevenção e precaução</b>. A regra de ouro: o melhor resíduo é o que <b>nunca foi gerado</b>. Quanto mais embaixo na lista, pior.</p>
+    <div style="margin-top:12px">
+      <div class="pyramid-row"><div class="bar" style="width:100%;background:#15803d">1️⃣ NÃO GERAR — repensar o produto pra não criar resíduo</div></div>
+      <div class="pyramid-row"><div class="bar" style="width:88%;background:#16a34a">2️⃣ REDUZIR — na fonte (projeto, compra, embalagem)</div></div>
+      <div class="pyramid-row"><div class="bar" style="width:76%;background:#22c55e">3️⃣ REUTILIZAR — mesmo uso, sem transformar</div></div>
+      <div class="pyramid-row"><div class="bar" style="width:64%;background:#4ade80;color:#14532d">4️⃣ RECICLAR — transforma propriedades → novo insumo</div></div>
+      <div class="pyramid-row"><div class="bar" style="width:52%;background:#86efac;color:#14532d">5️⃣ TRATAR — compostagem, energia, recuperação</div></div>
+      <div class="pyramid-row"><div class="bar" style="width:40%;background:#cbd5e1;color:#334155">6️⃣ DISPOR — só rejeito, em aterro adequado</div></div>
+    </div>
+    <div class="intu">Mnemônico: <b>"Não-Re-Re-Re-Tra-Dis"</b> → <b>Não</b> gerar, <b>Re</b>duzir, <b>Re</b>utilizar, <b>Re</b>ciclar, <b>Tra</b>tar, <b>Dis</b>por. Os 3 "Re" vêm em ordem de esforço crescente de transformação.</div>
+    <div class="warn">Reutilizar <b>≠</b> Reciclar. Reutilizar = mesma finalidade, SEM transformação física/química. Reciclar = TRANSFORMA as propriedades. Trocam essa pegadinha na prova.</div>
+  </div>
+
+  <div class="card">
+    <h3>♻️ Linear vs. Circular — "quando recuperar"</h3>
+    <div class="vs">
+      <div class="box bad"><b>Economia LINEAR</b><br>Extrair → Produzir → Descartar<br><span style="font-size:.78rem">(take–make–dispose). Ellen MacArthur, 2013</span></div>
+      <div class="mid">VS</div>
+      <div class="box good"><b>Economia CIRCULAR</b><br>O resíduo volta a ser <b>matéria-prima secundária</b>. Foco em otimizar recurso e cortar desperdício.</div>
+    </div>
+    <div class="intu">Por que recuperar compensa? O <b>alumínio</b> é o exemplo-chave: produzir do zero gasta <b>120 MJ/kg</b>; reciclar gasta só <b>20 MJ/kg</b>. Recuperar = economia de 100 MJ/kg de energia "embutida". Recupera-se quando o material ainda carrega energia/valor que seria jogado fora.</div>
+    <p style="font-size:.85rem;margin-top:8px"><b>Conceitos irmãos:</b> <span class="pill" style="background:var(--res-l);color:var(--res-d)">P+L (Produção+Limpa)</span> evitar→reintegrar→reciclar · <span class="pill" style="background:var(--res-l);color:var(--res-d)">Manufatura Enxuta</span> corta desperdício de material, trabalho e tempo.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>🛣️ Rotas de tratamento (recuperação)</h3>
+      <p style="font-size:.85rem"><b>🔥 Térmica:</b> incineração, co-processamento, pirólise, gaseificação, plasma, CDR.<br>
+      <b>🦠 Biológica:</b> compostagem, digestão anaeróbia (biogás).<br>
+      <b>⚗️ Química:</b> hidrólise ácida, despolimerização.<br>
+      <b>🕳️ Disposição final:</b> aterro sanitário / aterro industrial Classe I.</p>
+    </div>
+    <div class="card">
+      <h3>🏗️ Construção civil — CONAMA 307/2002</h3>
+      <table>
+        <tr><th>Classe</th><th>O que é</th></tr>
+        <tr><td><b>A</b></td><td>Reutilizável (tijolo, concreto)</td></tr>
+        <tr><td><b>B</b></td><td>Reciclável (plástico, metal, madeira)</td></tr>
+        <tr><td><b>C</b></td><td>Sem tecnologia de reciclagem</td></tr>
+        <tr><td><b>D</b></td><td>Perigoso (tinta, amianto)</td></tr>
+      </table>
+      <p style="font-size:.78rem;color:var(--muted)">A→B→C→D = do melhor (reusa) ao pior (perigoso).</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🔄 Logística Reversa (LR) — PNRS</h3>
+    <p style="font-size:.9rem">Começa com o <b>consumidor</b> devolvendo. Quem é <b>obrigado</b> a implementar: <b>fabricantes, importadores, distribuidores e comerciantes</b> (o setor privado paga o ônus).</p>
+    <div class="intu">É a seta de volta da cadeia: o produto "anda pra trás" até quem o colocou no mercado. Exemplos: pilhas, pneus, lâmpadas (R$0,40/lâmpada importada → RECICLOS), eletrônicos, medicamentos, óleo, embalagens.</div>
+  </div>
+
+  <div class="card">
+    <h3>🕳️ Lixão vs. Aterro Controlado vs. Aterro Sanitário</h3>
+    <table>
+      <tr><th></th><th>Lixão</th><th>Aterro Controlado</th><th>Aterro Sanitário</th></tr>
+      <tr><td><b>Nota</b></td><td>😡 péssimo</td><td>😐 intermediário</td><td>😀 adequado</td></tr>
+      <tr><td>Impermeabilização</td><td>❌</td><td>❌</td><td>✅</td></tr>
+      <tr><td>Coleta chorume/gás</td><td>❌</td><td>❌</td><td>✅</td></tr>
+      <tr><td>Cobertura de solo</td><td>❌ céu aberto</td><td>✅ compacta e cobre</td><td>✅</td></tr>
+    </table>
+    <div class="intu">O <b>aterro controlado</b> é o "meio-termo" — geralmente um lixão melhorado: cobre o lixo, mas <b>ainda não</b> tem manta nem coleta de chorume. Por isso ainda contamina solo e água.</div>
+    <div class="warn">Mesmo um aterro sanitário "perfeito" pode falhar: instabilidade de taludes (→ monitoramento geotécnico), vazamento de chorume (→ poços de monitoramento), tubo de dreno entupido por falta de inclinação. <b>Por isso se MONITORA</b> — veja o card de monitoramento no módulo do ar.</div>
+  </div>
+
+  <div class="cola">
+    <h3>🧠 Cola mental — Resíduos</h3>
+    <ul>
+      <li><b>Resíduo</b> tem valor · <b>Rejeito</b> só aterro · Lei <b>12.305/2010 (PNRS)</b></li>
+      <li>Hierarquia: <b>Não gerar › Reduzir › Reutilizar › Reciclar › Tratar › Dispor</b></li>
+      <li>Circular: resíduo = <b>matéria-prima secundária</b>. Alumínio <b>120→20 MJ/kg</b></li>
+      <li>LR obriga: <b>fabricante, importador, distribuidor, comerciante</b></li>
+      <li>CONAMA 307: <b>A</b> reusa · <b>B</b> recicla · <b>C</b> sem tech · <b>D</b> perigoso</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 2: POLUIÇÃO ATMOSFÉRICA ================= -->
+<section id="ar">
+  <div class="mod-head h-ar">
+    <span class="ic">🌫️</span>
+    <div><h2>Módulo 2 — Poluição Atmosférica</h2>
+    <p>poluentes · dispersão · inversão térmica · padrões · por que monitorar</p></div>
+  </div>
+
+  <div class="card">
+    <h3>🎈 Estrutura da atmosfera (onde mora a poluição)</h3>
+    <div class="grid2">
+      <div class="box" style="background:var(--ar-l);border-radius:10px;padding:12px">
+        <b>🌍 TROPOSFERA</b> (0–15 km)<br><span style="font-size:.85rem">Onde vivemos e onde a poluição se concentra. Camada <b>turbulenta</b> (sol esquenta o solo de dia). É aqui que cai a matéria.</span>
+      </div>
+      <div class="box" style="background:#ede9fe;border-radius:10px;padding:12px">
+        <b>🛡️ ESTRATOSFERA</b> (15–50 km)<br><span style="font-size:.85rem">Camada de <b>ozônio protetor</b> — filtra UV-B. É o "protetor solar" do planeta.</span>
+      </div>
+    </div>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:8px">Ar limpo: N₂ 78% · O₂ 21% · Ar(argônio) 0,9%.</p>
+  </div>
+
+  <div class="card">
+    <h3>🔬 Primário vs. Secundário</h3>
+    <div class="vs">
+      <div class="box good"><b>PRIMÁRIO</b><br>Emitido <b>direto</b> da fonte.<br><span style="font-size:.8rem">MP, CO, CO₂, NOx, SO₂, H₂S, hidrocarbonetos, CFC</span></div>
+      <div class="mid">→</div>
+      <div class="box bad"><b>SECUNDÁRIO</b><br><b>Formado na atmosfera</b> por reação (às vezes fotoquímica).<br><span style="font-size:.8rem">Ozônio (O₃), PAN, H₂O₂, aldeídos</span></div>
+    </div>
+    <div class="intu">Primário = você cuspiu pronto. Secundário = ingredientes se misturam no ar + luz do sol e "cozinham" um poluente novo. O <b>O₃ troposférico</b> é o filho secundário clássico (NOx + hidrocarbonetos + sol).</div>
+  </div>
+
+  <div class="card">
+    <h3>⚖️ Ozônio: herói ou vilão? <span class="tag" style="background:var(--ar)">cai sempre</span></h3>
+    <div class="vs">
+      <div class="box good"><b>BOM lá em cima</b> 🛡️<br>Estratosfera (20–35 km): filtra a radiação UV-B. Protege a vida.</div>
+      <div class="mid">vs</div>
+      <div class="box bad"><b>RUIM aqui embaixo</b> ☠️<br>Troposfera: altamente oxidante, tóxico a plantas e pulmões. É poluente.</div>
+    </div>
+    <div class="intu">"<b>Bom no céu, ruim no chão.</b>" Mesmo gás, papéis opostos dependendo da altitude.</div>
+  </div>
+
+  <div class="card">
+    <h3>📏 Escalas da poluição</h3>
+    <table>
+      <tr><th>Escala</th><th>Fenômeno típico</th></tr>
+      <tr><td><b>🏙️ Local</b></td><td>Smog urbano (O₃ + material particulado)</td></tr>
+      <tr><td><b>🗺️ Regional</b></td><td>Deposição/chuva ácida</td></tr>
+      <tr><td><b>🌍 Global</b></td><td>Buraco de O₃ estratosférico + mudança climática</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>🌬️ Dispersão & Inversão Térmica <span class="tag" style="background:var(--ar)">importante p/ cálculo</span></h3>
+    <p style="font-size:.88rem">A qualidade do ar = <b>emissão + topografia + meteorologia</b>. Normalmente a própria atmosfera dilui o poluente. <b>Vento mais forte = mais diluição.</b></p>
+    <div class="grid2" style="margin-top:10px">
+      <div>
+        <p style="text-align:center;font-weight:700;color:#16a34a;font-size:.85rem">✅ Normal: ar sobe e renova</p>
+        <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="200" height="150" fill="#e0f2fe"/>
+          <rect x="0" y="120" width="200" height="30" fill="#86efac"/>
+          <text x="100" y="20" text-anchor="middle" font-size="10" fill="#075985">frio (pesado) em cima ❄️</text>
+          <text x="100" y="110" text-anchor="middle" font-size="10" fill="#9a3412">quente (leve) embaixo 🔥</text>
+          <path d="M60 120 Q55 70 65 35" stroke="#475569" stroke-width="2.5" fill="none" marker-end="url(#up)"/>
+          <path d="M120 120 Q115 70 125 35" stroke="#475569" stroke-width="2.5" fill="none" marker-end="url(#up)"/>
+          <defs><marker id="up" markerWidth="9" markerHeight="9" refX="4" refY="6" orient="auto"><path d="M0,6 L4,0 L8,6" fill="#475569"/></marker></defs>
+          <ellipse cx="90" cy="125" rx="20" ry="6" fill="#78716c" opacity=".6"/>
+          <text x="90" y="128" text-anchor="middle" font-size="8" fill="#fff">fumaça</text>
+        </svg>
+      </div>
+      <div>
+        <p style="text-align:center;font-weight:700;color:#dc2626;font-size:.85rem">❌ Inversão: poluente preso</p>
+        <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="200" height="150" fill="#e0f2fe"/>
+          <rect x="0" y="120" width="200" height="30" fill="#86efac"/>
+          <rect x="0" y="55" width="200" height="6" fill="#f97316" opacity=".7"/>
+          <text x="100" y="48" text-anchor="middle" font-size="9" fill="#9a3412">camada QUENTE (tampa) 🔥</text>
+          <text x="100" y="80" text-anchor="middle" font-size="9" fill="#075985">ar frio preso embaixo ❄️</text>
+          <ellipse cx="70" cy="105" rx="55" ry="10" fill="#78716c" opacity=".55"/>
+          <ellipse cx="120" cy="112" rx="55" ry="10" fill="#78716c" opacity=".55"/>
+          <text x="100" y="135" text-anchor="middle" font-size="8" fill="#334155">poluente acumula na superfície</text>
+        </svg>
+      </div>
+    </div>
+    <div class="intu"><b>Inversão térmica</b> = o normal vira de cabeça pra baixo: o ar fica MAIS QUENTE com a altura. O ar frio (pesado) fica preso embaixo, como uma <b>tampa de panela</b> sobre a cidade. Sem subida vertical, o poluente acumula na superfície. Clássico em <b>vales</b> e cidades como São Paulo, Santiago, Los Angeles. Topografia (montanha) piora, segurando o ar frio.</div>
+  </div>
+
+  <div class="card">
+    <h3>📊 Padrões de Qualidade do Ar (PQAr) — CONAMA 03/90</h3>
+    <p style="font-size:.88rem">Poluentes-indicadores: <b>SO₂, PTS, PM10, CO, O₃, HC, NO₂</b> (mais frequentes + mais danosos).</p>
+    <div class="vs">
+      <div class="box bad"><b>PADRÃO PRIMÁRIO</b><br>Nível máximo tolerável p/ a <b>saúde</b>. Meta de curto/médio prazo.</div>
+      <div class="mid">vs</div>
+      <div class="box good"><b>PADRÃO SECUNDÁRIO</b><br>Nível <b>desejado</b> (mínimo efeito ao bem-estar/flora). Meta de longo prazo.</div>
+    </div>
+    <p style="font-size:.85rem;margin-top:8px"><b>IQAr</b> (Índice de Qualidade do Ar): adimensional, 5 faixas (0 a >200). A qualidade do dia é dada pelo <b>PIOR poluente</b> medido na estação.</p>
+    <div class="warn">Não confunda: <b>Primário</b> de padrão = saúde / curto prazo. <b>Primário</b> de poluente = emitido direto. Mesma palavra, dois sentidos!</div>
+  </div>
+
+  <div class="card">
+    <h3>📡 Pra que MONITORAR? &nbsp;🔧 Controle de fontes fixas</h3>
+    <p style="font-size:.9rem"><b>Por que monitorar (resposta de prova):</b> conhecer o perfil de emissões → verificar atendimento aos padrões → identificar a pior fonte → embasar políticas públicas → acionar alertas em episódios críticos → avaliar se o controle funciona. <b>Não se gerencia o que não se mede.</b></p>
+    <p style="font-size:.9rem;margin-top:10px"><b>Análise crítica do cenário (quando estoura o limite de uma fonte fixa):</b></p>
+    <div class="step"><div class="num">1</div><div class="body">Analisar o processo de geração do poluente (as condições de geração)</div></div>
+    <div class="step"><div class="num">2</div><div class="body">Avaliar substituir matéria-prima / combustível</div></div>
+    <div class="step"><div class="num">3</div><div class="body">Avaliar a eficiência da combustão no equipamento</div></div>
+    <div class="step"><div class="num">4</div><div class="body">Avaliar retornar o material ao processo ou reciclar</div></div>
+    <div class="step"><div class="num">5</div><div class="body">Só então instalar <b>ECP</b> (Equipamento de Controle de Poluição) — ex.: precipitador eletrostático, ciclone, filtro de manga, lavador</div></div>
+    <div class="intu">A lógica é a MESMA da hierarquia de resíduos: primeiro <b>reduzir na fonte</b> (processo, insumo, eficiência), e só no fim <b>tratar a saída</b> (ECP). Reduzir na fonte sempre vem antes de "filtrar no fim do tubo".</div>
+  </div>
+
+  <div class="cola">
+    <h3>🧠 Cola mental — Poluição do Ar</h3>
+    <ul>
+      <li>Troposfera = poluição mora aqui · Estratosfera = O₃ protetor</li>
+      <li><b>Primário</b> = direto · <b>Secundário</b> = reação no ar (O₃, PAN)</li>
+      <li>O₃: <b>bom no céu, ruim no chão</b></li>
+      <li>Inversão térmica = "tampa de panela": ar quente em cima prende o poluente</li>
+      <li>Vento ↑ = dispersão ↑ · topografia/vale piora</li>
+      <li>PQAr CONAMA 03/90 · IQAr = pior poluente · padrão primário=saúde</li>
+      <li>Controle: <b>reduzir na fonte ANTES de ECP</b></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 3: CLIMA ================= -->
+<section id="clima">
+  <div class="mod-head h-clima">
+    <span class="ic">🌡️</span>
+    <div><h2>Módulo 3 — Mudanças Climáticas</h2>
+    <p>IPCC · GEE & GWP · acordos · mercado de carbono · crédito de carbono</p></div>
+  </div>
+
+  <div class="card">
+    <h3>🏛️ IPCC — o "juiz científico" do clima</h3>
+    <p style="font-size:.9rem">Criado em <b>1988</b> por <b>OMM + PNUMA</b>. Hoje 195 países. <b>NÃO faz pesquisa própria</b> — ele <b>reúne, avalia e sintetiza</b> a ciência mundial em relatórios de consenso.</p>
+    <div class="intu">O IPCC é o "Wikipedia revisado" do clima: não inventa o conteúdo, mas junta o melhor de todos os estudos e dá o veredito que governos usam. Frase do AR6 (2021): <b>"É inequívoco que a influência humana aqueceu o planeta."</b> +1,1 °C desde a era pré-industrial.</div>
+    <table>
+      <tr><th>Grupo</th><th>Pergunta que responde</th></tr>
+      <tr><td><b>GT-I</b></td><td>Base física — como/por que o clima muda</td></tr>
+      <tr><td><b>GT-II</b></td><td>Impactos, adaptação e vulnerabilidade</td></tr>
+      <tr><td><b>GT-III</b></td><td>Mitigação — como cortar emissões (inclui mercado de carbono)</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>🔥 Efeito Estufa & os GEE</h3>
+    <p style="font-size:.9rem">GEE do Protocolo de Kyoto: <b>CO₂, CH₄ (metano), N₂O (óxido nitroso), HFCs, PFCs, SF₆</b>. São "long-lived": bem misturados na troposfera, não dependem de onde foram emitidos.</p>
+    <h3 style="margin-top:14px">📈 GWP — Potencial de Aquecimento Global <span class="tag" style="background:var(--clima)">decore os números!</span></h3>
+    <p style="font-size:.85rem">Quanto cada gás aquece comparado ao CO₂ (que = referência = 1). Unidade: <b>CO₂e</b> (equivalente).</p>
+    <table>
+      <tr><th>Gás</th><th>GWP (× CO₂)</th><th>Fontes</th></tr>
+      <tr><td>CO₂</td><td><b>1</b></td><td>Energia, cimento, queima fóssil (fica 100–200 anos!)</td></tr>
+      <tr><td>CH₄ metano</td><td><b>25</b></td><td>Decomp. anaeróbia, aterro, gado, carvão</td></tr>
+      <tr><td>N₂O óxido nitroso</td><td><b>298</b></td><td>Agricultura, combustão, indústria</td></tr>
+      <tr><td>SF₆</td><td><b>22.800</b></td><td>&lt;2% das emissões, mas brutalmente potente</td></tr>
+    </table>
+    <div class="intu">Mnemônico p/ GWP: <b>"1 vaca (25) vale 298 num campo, e o SF₆ é o monstro de 22 mil"</b>. CO₂=1, CH₄=25, N₂O=298, SF₆≈22.800.</div>
+  </div>
+
+  <div class="card">
+    <h3>❄️→☀️ A saga do Ozônio & CFC (caso clássico)</h3>
+    <p style="font-size:.88rem">CFCs foram criados (DuPont, ~1930) como refrigerante "perfeito": inerte, não-tóxico, não-inflamável. <b>Mas</b>: justamente por serem inertes, sobem intactos até a estratosfera, a radiação UV os quebra e o cloro <b>destrói o O₃</b>.</p>
+    <div class="intu"><b>Lição de projeto:</b> uma decisão excelente (refrigerante inerte) gerou consequência não-prevista (buraco de ozônio). Sempre considere ramificações futuras. Solução: <b>Protocolo de Montreal (1987)</b> → eliminação dos CFC → substituição por HCFC → HFC.</div>
+    <div class="warn">Não confunda os dois problemas: <b>Buraco de ozônio</b> = CFC, UV, resolvido por <b>Montreal</b>. <b>Aquecimento global</b> = GEE/CO₂, resolvido por <b>Kyoto/Paris</b>. São coisas diferentes que a prova adora misturar!</div>
+  </div>
+
+  <div class="card">
+    <h3>📜 Os 3 acordos — linha do tempo</h3>
+    <div class="step"><div class="num" style="background:var(--clima)">92</div><div class="body"><b>1992 — UNFCCC</b> (Rio-92): convenção-quadro, 150+ nações. Nasce do 1º relatório do IPCC (1990).</div></div>
+    <div class="step"><div class="num" style="background:var(--clima)">97</div><div class="body"><b>1997 — Protocolo de Kyoto:</b> 1ª meta <b>legalmente vinculante</b> p/ países desenvolvidos. Cria o <b>MDL</b> (Mecanismo de Desenvolvimento Limpo) — o nascimento do mercado de carbono. Valeu até 2020.</div></div>
+    <div class="step"><div class="num" style="background:var(--clima)">15</div><div class="body"><b>2015 — Acordo de Paris:</b> 195 países, cada um com sua <b>NDC</b> (meta nacional). Objetivo: segurar o aquecimento <b>abaixo de 2 °C</b> (buscando 1,5 °C). O <b>Artigo 6</b> cria o mercado de carbono global, sucessor do MDL.</div></div>
+    <div class="intu">Princípio que perpassa tudo: <b>"responsabilidades comuns, porém diferenciadas"</b> — países ricos emitiram historicamente mais, então assumem a maior parcela.</div>
+  </div>
+
+  <div class="card">
+    <h3>💰 Mercado de Carbono & Crédito de Carbono</h3>
+    <div class="ex" style="background:var(--clima-l);border-color:#fed7aa">
+      <h4>O que é 1 crédito de carbono?</h4>
+      <p style="font-size:.9rem">= a redução, remoção ou prevenção de <b>1 tonelada de CO₂ equivalente (1 tCO₂e)</b>. Empresas compram créditos para <b>compensar</b> emissões inevitáveis, financiando projetos verdes.</p>
+    </div>
+    <p style="font-size:.85rem;margin-top:6px"><b>Requisito essencial: ADICIONALIDADE</b> — o projeto só vale se a redução <b>não aconteceria sem</b> o dinheiro do crédito.</p>
+    <div class="vs">
+      <div class="box bad" style="background:#fef9c3;border-color:#fde047"><b>Mercado REGULADO</b><br>Obrigatório por lei. <b>Cap-and-trade</b> (teto + comércio), ETS, carbon tax, penalidades. Ex.: UE, Califórnia, Coreia do Sul.</div>
+      <div class="mid">vs</div>
+      <div class="box good"><b>Mercado VOLUNTÁRIO</b><br>Empresa compra por vontade própria (ESG, marca, net-zero). Sem limite geográfico. Certificado por padrões. Cresce rápido — destaque p/ <b>soluções baseadas na natureza</b>.</div>
+    </div>
+    <div class="intu">Cap-and-trade = governo põe um <b>teto</b> de emissão e distribui "cotas". Quem polui pouco vende sobra; quem polui muito compra. O preço faz reduzir onde é mais barato reduzir. Exemplo prático: <b>aterro sanitário</b> que queima o metano (biogênico = neutro) gera créditos.</div>
+  </div>
+
+  <div class="card">
+    <h3>📋 Inventário de emissões — o 1º passo</h3>
+    <p style="font-size:.9rem">Inventariar GEE (por setor: energia, indústria, uso do solo, desmatamento) é o <b>primeiro passo</b> para conhecer o perfil, achar oportunidades de redução e criar políticas. O Brasil deve reportar à UNFCCC (Comunicação Nacional). Base metodológica: <b>IPCC</b>.</p>
+  </div>
+
+  <div class="cola">
+    <h3>🧠 Cola mental — Clima</h3>
+    <ul>
+      <li>IPCC: <b>1988, OMM+PNUMA</b>, não pesquisa — sintetiza. GT-I física, II impacto, III mitigação</li>
+      <li>GWP: CO₂=<b>1</b> · CH₄=<b>25</b> · N₂O=<b>298</b> · SF₆≈<b>22.800</b></li>
+      <li>Ozônio/CFC → <b>Montreal 1987</b> &nbsp;|&nbsp; GEE/CO₂ → <b>Kyoto/Paris</b></li>
+      <li>Acordos: <b>UNFCCC 92</b> · <b>Kyoto 97 (MDL)</b> · <b>Paris 15 (NDC, Art.6)</b></li>
+      <li>1 crédito = <b>1 tCO₂e</b> · exige <b>adicionalidade</b> · regulado (cap-and-trade) vs voluntário</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= MÓDULO 4: CÁLCULOS ================= -->
+<section id="calculos">
+  <div class="mod-head h-calc">
+    <span class="ic">🧮</span>
+    <div><h2>CÁLCULOS — Modelo de Gauss (Dispersão de Poluentes)</h2>
+    <p>Vale 2 dos 6 pontos. Domine a receita e você garante esses pontos.</p></div>
+  </div>
+
+  <div class="card" style="border:2px solid var(--calc)">
+    <h3>🎯 A ideia intuitiva antes da fórmula</h3>
+    <p style="font-size:.92rem">Uma chaminé solta poluente. O vento empurra a "pluma" e ela vai <b>se espalhando como um cone/sino</b>. Queremos saber: <b>qual a concentração C num ponto (x, y, z)?</b></p>
+    <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="170" width="600" height="30" fill="#86efac"/>
+      <rect x="40" y="90" width="18" height="80" fill="#64748b"/>
+      <text x="49" y="185" text-anchor="middle" font-size="10" fill="#334155">chaminé (altura h)</text>
+      <path d="M58 90 Q90 70 120 75 L520 30 Q540 95 520 120 L120 105 Q90 110 58 90" fill="#a78bfa" opacity=".4"/>
+      <path d="M58 95 L540 75" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="300" y="60" text-anchor="middle" font-size="11" fill="#4c1d95" font-weight="700">eixo da pluma (vento →)</text>
+      <text x="555" y="78" font-size="10" fill="#4c1d95">C(x,y,z)?</text>
+      <line x1="58" y1="75" x2="58" y2="170" stroke="#1e293b" stroke-dasharray="2 2"/>
+      <text x="30" y="60" font-size="10" fill="#1e293b">H = h + Δh</text>
+      <path d="M120 130 q60 0 120 0" stroke="#dc2626" fill="none"/>
+      <text x="180" y="148" text-anchor="middle" font-size="9" fill="#dc2626">σ espalha com a distância</text>
+      <text x="560" y="165" font-size="20">🏘️</text>
+    </svg>
+    <div class="intu">A pluma é uma <b>distribuição gaussiana (sino)</b> em torno do eixo. <b>σ<span class="sub">y</span></b> diz quanto espalha pros lados, <b>σ<span class="sub">z</span></b> quanto espalha pra cima/baixo. Quanto mais longe da fonte e mais instável o ar, maior o σ (mais espalhado, mais diluído).</div>
+  </div>
+
+  <div class="card">
+    <h3>📐 As fórmulas (do geral ao que você vai usar)</h3>
+    <p style="font-size:.85rem;color:var(--muted)">Forma completa (ponto qualquer, fonte elevada H, reflexão no solo):</p>
+    <div class="formula">
+      C(x,y,z) = <span class="frac"><span class="num">Q</span><span class="den">2π·u·σ<span class="sub">y</span>·σ<span class="sub">z</span></span></span> · e<span class="sup">−y²⁄2σ<span class="sub">y</span>²</span> · [ e<span class="sup">−(z−H)²⁄2σ<span class="sub">z</span>²</span> + e<span class="sup">−(z+H)²⁄2σ<span class="sub">z</span>²</span> ]
+    </div>
+    <p style="font-size:.85rem;color:var(--muted)">No <b>nível do solo (z=0)</b> os dois termos viram iguais → o "2" some. É a versão que você mais usa:</p>
+    <div class="formula" style="border:2px solid #a78bfa">
+      C(x,y) = <span class="frac"><span class="num">Q</span><span class="den">π·u<span class="sub">H</span>·σ<span class="sub">y</span>·σ<span class="sub">z</span></span></span> · e<span class="sup">−H²⁄2σ<span class="sub">z</span>²</span> · e<span class="sup">−y²⁄2σ<span class="sub">y</span>²</span>
+    </div>
+    <p style="font-size:.85rem;color:var(--muted)">No <b>eixo central (y=0)</b>, o último termo = e⁰ = 1 e some:</p>
+    <div class="formula">
+      C(x,0) = <span class="frac"><span class="num">Q</span><span class="den">π·u<span class="sub">H</span>·σ<span class="sub">y</span>·σ<span class="sub">z</span></span></span> · e<span class="sup">−H²⁄2σ<span class="sub">z</span>²</span>
+    </div>
+    <div class="intu">Os dois <b>e<span class="sup">−...</span></b> são "redutores" entre 0 e 1. O de <b>z (altura)</b> sempre está lá (a fonte está no alto H). O de <b>y (lateral)</b> só aparece se o ponto estiver <b>fora do eixo</b> (y≠0). No eixo, e<span class="sup">0</span>=1, então some.</div>
+    <table>
+      <tr><th>Símbolo</th><th>Significado</th><th>Unidade</th></tr>
+      <tr><td>C</td><td>concentração no ponto</td><td>g/m³</td></tr>
+      <tr><td>Q</td><td>taxa de emissão</td><td>g/s</td></tr>
+      <tr><td>u<span class="sub">H</span></td><td>velocidade do vento na altura H</td><td>m/s</td></tr>
+      <tr><td>H</td><td>altura efetiva = h(chaminé)+Δh(subida)</td><td>m</td></tr>
+      <tr><td>σ<span class="sub">y</span>, σ<span class="sub">z</span></td><td>coef. dispersão lateral/vertical (gráfico de Turner)</td><td>m</td></tr>
+      <tr><td>x, y</td><td>distância a jusante / lateral ao eixo</td><td>m</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>🌬️ Corrigir o vento para a altura (passo que esquecem)</h3>
+    <div class="formula">
+      u<span class="sub">H</span> = u<span class="sub">a</span> · ( <span class="frac"><span class="num">H</span><span class="den">z<span class="sub">a</span></span></span> )<span class="sup">p</span>
+    </div>
+    <p style="font-size:.85rem">O anemômetro mede o vento <b>baixo (z<span class="sub">a</span>, geralmente 10 m)</b>. Lá em cima (H) venta mais. <b>p</b> depende da classe de estabilidade:</p>
+    <table>
+      <tr><th>Classe</th><th>Condição</th><th>p</th></tr>
+      <tr><td>A</td><td>Muito instável</td><td>0,15</td></tr>
+      <tr><td>B</td><td>Moderadamente instável</td><td>0,15</td></tr>
+      <tr><td>C</td><td>Pouco instável</td><td>0,20</td></tr>
+      <tr><td>D</td><td>Neutro</td><td>0,25</td></tr>
+      <tr><td>E</td><td>Pouco estável</td><td>0,40</td></tr>
+      <tr><td>F</td><td>Estável</td><td>0,60</td></tr>
+    </table>
+    <div class="warn">Se a velocidade já for dada "na altura H", <b>não corrija</b>. Só use a fórmula quando der a velocidade no anemômetro (10 m) e pedir lá em cima.</div>
+  </div>
+
+  <div class="card">
+    <h3>🧭 Achar a CLASSE DE ESTABILIDADE (A→F)</h3>
+    <p style="font-size:.85rem">Entre com a <b>velocidade do vento</b> + <b>insolação (dia)</b> ou <b>nebulosidade (noite)</b>:</p>
+    <table>
+      <tr><th>Vento (m/s)</th><th>Sol forte</th><th>Sol moder.</th><th>Sol leve</th><th>Noite nublada</th><th>Noite limpa</th></tr>
+      <tr><td>&lt;2</td><td>A</td><td>A-B</td><td>B</td><td>E</td><td>F</td></tr>
+      <tr><td>2-3</td><td>A-B</td><td>B</td><td>C</td><td>E</td><td>F</td></tr>
+      <tr><td>3-5</td><td>B</td><td>B-C</td><td>C</td><td>D</td><td>E</td></tr>
+      <tr><td>5-6</td><td>C</td><td>C-D</td><td>D</td><td>D</td><td>D</td></tr>
+      <tr><td>&gt;6</td><td>C</td><td>D</td><td>D</td><td>D</td><td>D</td></tr>
+    </table>
+    <div class="intu"><b>A = instável = sol forte + vento fraco</b> (ar borbulha, dispersa bem). <b>F = estável = noite limpa + vento fraco</b> (ar parado, pouca dispersão = pior caso de concentração). "Pior condição atmosférica" da prova = <b>classe F</b>.</div>
+  </div>
+
+  <div class="card" style="background:var(--calc-l)">
+    <h3>📋 A RECEITA — siga sempre nesta ordem</h3>
+    <div class="step"><div class="num">1</div><div class="body"><b>Ache a classe de estabilidade</b> (A–F) pela tabela vento + sol/nuvem.</div></div>
+    <div class="step"><div class="num">2</div><div class="body"><b>Corrija o vento</b> p/ a altura H: u<span class="sub">H</span>=u<span class="sub">a</span>(H/z<span class="sub">a</span>)<span class="sup">p</span> — só se o vento foi dado no anemômetro.</div></div>
+    <div class="step"><div class="num">3</div><div class="body"><b>Leia σ<span class="sub">y</span> e σ<span class="sub">z</span></b> no gráfico de Turner, entrando com a distância x e a classe.</div></div>
+    <div class="step"><div class="num">4</div><div class="body"><b>Escolha a fórmula certa:</b> no eixo (y=0)? fora do eixo (y≠0)? nível do solo (z=0)?</div></div>
+    <div class="step"><div class="num">5</div><div class="body"><b>Substitua e calcule.</b> Cuidado com unidades (km→m, mg/µg→g).</div></div>
+    <div class="step"><div class="num">6</div><div class="body"><b>Concentração MÁXIMA?</b> Use o atalho abaixo (não precisa varrer x).</div></div>
+  </div>
+
+  <div class="card">
+    <h3>⛰️ Concentração MÁXIMA (atalho de Turner 1970)</h3>
+    <div class="formula">
+      C<span class="sub">máx</span> = <span class="frac"><span class="num">Q</span><span class="den">u<span class="sub">H</span></span></span> · ( <span class="frac"><span class="num">C·u<span class="sub">H</span></span><span class="den">Q</span></span> )<span class="sub">máx</span>
+    </div>
+    <p style="font-size:.85rem">O termo (C·u/Q)<span class="sub">máx</span> você <b>lê num gráfico</b> entrando com a <b>classe</b> e a <b>altura efetiva H</b>. O mesmo gráfico dá o <b>x<span class="sub">máx</span></b> (distância onde ocorre o pico).</p>
+    <div class="intu">A pluma sai concentrada lá em cima (H), desce, bate no chão num pico e depois dilui. O C<span class="sub">máx</span> é esse "tapa no chão". O gráfico de Turner já te entrega o valor normalizado — é só multiplicar por Q/u.</div>
+  </div>
+
+  <!-- EXEMPLOS RESOLVIDOS -->
+  <h3 style="margin:22px 0 10px;color:var(--calc-d)">✍️ 3 Exercícios resolvidos (os da sua lista)</h3>
+
+  <div class="ex">
+    <h4>Ex. 1 — Lareira de CO (o mais simples)</h4>
+    <div class="given">Q = 20 g/s · u = 2 m/s · H = 6 m · noite clara, vento 2 m/s → classe F<br>x = 400 m no eixo → (Turner) σ<span class="sub">y</span>=15 m, σ<span class="sub">z</span>=7 m</div>
+    <p style="font-size:.88rem"><b>a) C a 400 m no eixo (y=0):</b></p>
+    <div class="formula" style="font-size:.95rem">C = <span class="frac"><span class="num">20</span><span class="den">π·2·15·7</span></span> · e<span class="sup">−6²⁄(2·7²)</span> = 0,0303 · e<span class="sup">−0,367</span> = 0,0303 · 0,693</div>
+    <div class="ans">a) C ≈ 0,021 g/m³</div>
+    <p style="font-size:.88rem;margin-top:10px"><b>b) Concentração máxima no solo:</b> p/ classe F e H=6 m, o gráfico dá (C·u/Q)<span class="sub">máx</span> = 4×10⁻³.</p>
+    <div class="formula" style="font-size:.95rem">C<span class="sub">máx</span> = <span class="frac"><span class="num">20</span><span class="den">2</span></span> · 4×10⁻³ = 10 · 0,004</div>
+    <div class="ans">b) C<span class="sub">máx</span> ≈ 0,04 g/m³, ocorrendo em x ≈ 200 m (0,2 km)</div>
+  </div>
+
+  <div class="ex">
+    <h4>Ex. 2 — Chaminé industrial de NO (com correção de vento)</h4>
+    <div class="given">Q = 80 g/s · H = 100 m · u<span class="sub">a</span> = 4 m/s @ 10 m · dia claro de verão → classe B (p=0,15)</div>
+    <p style="font-size:.88rem"><b>Passo-chave — corrigir o vento p/ H=100 m:</b></p>
+    <div class="formula" style="font-size:.95rem">u<span class="sub">H</span> = 4·(100/10)<span class="sup">0,15</span> = 4·10<span class="sup">0,15</span> = 4·1,41 = <b>5,65 m/s</b></div>
+    <p style="font-size:.85rem">a) C a 2 km no eixo: leia σ<span class="sub">y</span>≈210 m, σ<span class="sub">z</span>≈234 m (classe B, x=2000 m) e aplique C(x,0). → ordem de <b>8×10⁻⁵ g/m³</b>.<br>
+    b) C<span class="sub">máx</span>: use o gráfico (C·u/Q)<span class="sub">máx</span> com classe B e H=100 m → C<span class="sub">máx</span>=(Q/u<span class="sub">H</span>)·(valor lido).<br>
+    c) Ponto deslocado 0,1 km do eixo (y=100 m): pegue o resultado (a) e <b>multiplique por e<span class="sup">−y²⁄2σ<span class="sub">y</span>²</span></b> = e<span class="sup">−100²⁄(2·210²)</span>.</p>
+    <div class="intu">Repare a estrutura: <b>(a)</b> usa a fórmula do eixo; <b>(c)</b> é só (a) × o fator lateral. Você quase nunca recalcula tudo — vai "ligando" termos extras conforme o ponto sai do eixo.</div>
+  </div>
+
+  <div class="ex">
+    <h4>Ex. 3 — Usina termelétrica (problema "invertido" — o mais difícil)</h4>
+    <div class="given">Emissão = 1,2 g/s de CO₂ por MW · anemômetro @10 m, u=4 m/s · "pior condição" → classe F (p=0,60)<br>cidade a 1 km · H = 150 m</div>
+    <p style="font-size:.88rem"><b>a) Máxima geração p/ que C<span class="sub">máx</span> ≤ 10 µg/m³:</b></p>
+    <div class="step"><div class="num">i</div><div class="body">Corrija o vento: u<span class="sub">H</span>=4·(150/10)<span class="sup">0,60</span></div></div>
+    <div class="step"><div class="num">ii</div><div class="body">Pelo gráfico (classe F, H=150 m) ache (C·u/Q)<span class="sub">máx</span>. Então C<span class="sub">máx</span>=(Q/u<span class="sub">H</span>)·(valor).</div></div>
+    <div class="step"><div class="num">iii</div><div class="body">Isole Q do limite C<span class="sub">máx</span>=10 µg/m³. Como Q=1,2·(MW), a potência = Q/1,2.</div></div>
+    <p style="font-size:.88rem"><b>b)</b> Com essa geração, ache C nos limites da cidade (x=1 km, no eixo).<br>
+    <b>c)</b> Agora "inverte de novo": dado u<span class="sub">H</span>=9 m/s, geração 70 MW e limite C≤0,01 mg/m³, ache a <b>altura mínima H</b> da chaminé (isole H dentro do e<span class="sup">−H²⁄2σ<span class="sub">z</span>²</span>).</p>
+    <div class="intu">Sempre que a prova der a <b>concentração limite</b> e pedir Q, MW ou H, é problema <b>invertido</b>: monte a fórmula normal e <b>isole a incógnita</b>. "Pior condição" = classe F. Atenção fanática às unidades: 10 µg/m³ = 10×10⁻⁶ g/m³; 0,01 mg/m³ = 1×10⁻⁵ g/m³.</div>
+  </div>
+
+  <div class="warn" style="font-size:.92rem">Os 5 erros que mais tiram ponto: (1) esquecer de <b>corrigir o vento</b> p/ H; (2) usar a fórmula do eixo quando y≠0; (3) errar <b>unidades</b> (km→m, µg/mg→g); (4) trocar π por 2π (use π no nível do solo); (5) ler σ na classe/distância errada do gráfico.</div>
+
+  <div class="cola">
+    <h3>🧠 Cola mental — Cálculos (leve isto na cabeça)</h3>
+    <ul>
+      <li><b>Receita:</b> classe → corrige vento → lê σ → escolhe fórmula → calcula</li>
+      <li>Nível do solo: C = <b>Q/(π·u·σ<span class="sub">y</span>·σ<span class="sub">z</span>)</b> · e<span class="sup">−H²/2σz²</span> · e<span class="sup">−y²/2σy²</span></li>
+      <li>No eixo (y=0): o termo de y some (e⁰=1)</li>
+      <li>Vento: u<span class="sub">H</span>=u<span class="sub">a</span>(H/z<span class="sub">a</span>)<span class="sup">p</span> · F→p=0,60 (pior caso)</li>
+      <li>Máximo: C<span class="sub">máx</span>=(Q/u<span class="sub">H</span>)·(Cu/Q)<span class="sub">máx</span> do gráfico de Turner</li>
+      <li>Pediu Q/MW/H a partir de um limite? → <b>isola a incógnita</b></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FLASHCARDS + CHECKLIST ================= -->
+<section id="revisao">
+  <div class="mod-head" style="background:linear-gradient(135deg,#334155,#0f172a);color:#fff">
+    <span class="ic">✅</span>
+    <div><h2>Revisão final — teste-se</h2><p>Flashcards (clique p/ virar) + checklist da véspera</p></div>
+  </div>
+
+  <div class="card">
+    <h3>🃏 Flashcards relâmpago</h3>
+    <div class="grid2">
+      <div class="flash" onclick="this.classList.toggle('flip')"><div class="inner"><div class="f">Resíduo vs Rejeito?</div><div class="b">Resíduo ainda tem aproveitamento; Rejeito esgotou tudo → só aterro (PNRS 12.305/2010)</div></div></div>
+      <div class="flash" onclick="this.classList.toggle('flip')"><div class="inner"><div class="f">Ordem da hierarquia PNRS?</div><div class="b">Não gerar › Reduzir › Reutilizar › Reciclar › Tratar › Dispor</div></div></div>
+      <div class="flash" onclick="this.classList.toggle('flip')"><div class="inner"><div class="f">Por que o O₃ é "bom e ruim"?</div><div class="b">Bom na estratosfera (filtra UV-B); ruim na troposfera (oxidante tóxico, poluente secundário)</div></div></div>
+      <div class="flash" onclick="this.classList.toggle('flip')"><div class="inner"><div class="f">O que é inversão térmica?</div><div class="b">Ar quente sobre ar frio = "tampa" que impede subida vertical → poluente acumula no chão</div></div></div>
+      <div class="flash" onclick="this.classList.toggle('flip')"><div class="inner"><div class="f">GWP: CO₂, CH₄, N₂O, SF₆?</div><div class="b">1 · 25 · 298 · ~22.800</div></div></div>
+      <div class="flash" onclick="this.classList.toggle('flip')"><div class="inner"><div class="f">Montreal vs Kyoto/Paris?</div><div class="b">Montreal (1987) = ozônio/CFC. Kyoto(97)/Paris(15) = aquecimento/GEE</div></div></div>
+      <div class="flash" onclick="this.classList.toggle('flip')"><div class="inner"><div class="f">1 crédito de carbono = ?</div><div class="b">1 tonelada de CO₂ equivalente (tCO₂e). Exige ADICIONALIDADE</div></div></div>
+      <div class="flash" onclick="this.classList.toggle('flip')"><div class="inner"><div class="f">Fórmula de Gauss no solo, eixo?</div><div class="b">C = Q/(π·u·σy·σz) · e^(−H²/2σz²)</div></div></div>
+      <div class="flash" onclick="this.classList.toggle('flip')"><div class="inner"><div class="f">"Pior condição atmosférica" = classe?</div><div class="b">F (estável): noite limpa + vento fraco, p=0,60. Mínima dispersão</div></div></div>
+      <div class="flash" onclick="this.classList.toggle('flip')"><div class="inner"><div class="f">Corrigir vento p/ altura?</div><div class="b">u_H = u_a·(H/z_a)^p — só se vento foi dado no anemômetro (10 m)</div></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>📝 Checklist da véspera (marque conforme revisa)</h3>
+    <div class="checklist">
+      <label><input type="checkbox">Sei diferenciar resíduo × rejeito e a hierarquia PNRS de cor</label>
+      <label><input type="checkbox">Sei quando recuperar (ex. alumínio 120→20 MJ/kg) e as rotas de tratamento</label>
+      <label><input type="checkbox">Lixão × controlado × sanitário (tabela das ❌/✅)</label>
+      <label><input type="checkbox">Primário × secundário e o ozônio "bom/ruim"</label>
+      <label><input type="checkbox">Inversão térmica e fatores de dispersão (vento, topografia)</label>
+      <label><input type="checkbox">Padrões CONAMA 03/90, IQAr e por que monitorar</label>
+      <label><input type="checkbox">IPCC, GWP dos gases, acordos (UNFCCC/Kyoto/Paris)</label>
+      <label><input type="checkbox">Mercado de carbono: regulado × voluntário, adicionalidade</label>
+      <label><input type="checkbox">🧮 Receita de Gauss: classe → vento → σ → fórmula → calcula</label>
+      <label><input type="checkbox">🧮 Refiz os 3 exercícios sozinho, com atenção às unidades</label>
+    </div>
+  </div>
+
+  <div class="card" style="text-align:center;background:linear-gradient(135deg,var(--clima-l),#fff)">
+    <p style="font-size:1rem;font-weight:700;color:var(--clima-d)">Você consegue. 💪 Foca na receita de Gauss (2 pts garantidos) e nas tabelas de cor.</p>
+    <p style="font-size:.85rem;color:var(--muted);margin-top:6px">Dica: leia este guia uma vez agora, refaça os 3 exercícios cobrindo a resposta, e releia só as "Colas mentais" 1h antes da prova.</p>
+  </div>
+</section>
+
+</main>
+<footer>Guia gerado a partir das suas aulas ENG4025 (Aulas 5, 6, 9, 10, 11 + IPCC + Crédito de Carbono + resolução dos exercícios). Bons estudos, Luiz! 🍀</footer>
+</body>
+</html>
